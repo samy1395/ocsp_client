@@ -13,6 +13,8 @@
 -type certificate()    :: binary() | #'Certificate'{} | #'TBSCertificate'{} .
 -type directory_name() :: {rdnSequence, [[#'AttributeTypeAndValue'{}]]}.
 -type hash_algorithm() :: sha. % Just sha for now.
+-type rsa_public_key()       ::  #'RSAPublicKey'{}.
+-type dsa_public_key()       :: {integer(), #'Dss-Parms'{}}.
 
 -spec subject_name( certificate() ) -> directory_name().
 subject_name(Certificate) when is_binary(Certificate) ->
